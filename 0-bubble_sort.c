@@ -8,23 +8,21 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	unsigned int i = 0, j = 0, temp = 0;
+	unsigned int j = 0, temp = 0;
 	bool flag_bubble = true;
 
+	/* Loop tp validate the flag */
 	while (flag_bubble != false)
 	{
 		flag_bubble = false;
-		for ( ; i < size ; i++)
+		/* Loop that travel the array */
+		for (j = 0 ; j < size - 1; j++)
 		{
-			for ( ; j < size - 1 ; j++)
-			{
-				if (array[j] > array[j + 1])
-					temp = array[j], array[j] = array[j + 1],
-					array[j + 1] = temp,
-					print_array(array, size);
-			}
-			flag_bubble = true;
-			j = 0;
+			/* Condition to compare twice positions of the array */
+			if (array[j] > array[j + 1])
+				temp = array[j], array[j] = array[j + 1],
+				array[j + 1] = temp, flag_bubble = true,
+				print_array(array, size);
 		}
 	}
 }
