@@ -10,6 +10,8 @@ void insertion_sort_list(listint_t **list)
 	listint_t *temp = NULL, *temp_2 = NULL, *temp_3 = NULL;
 	listint_t *temp_4 = NULL, *temp_5 = NULL;
 
+	if (list == NULL || *list == NULL)
+		return;
 	temp = *list, temp_2 = (*list)->next;
 	while (temp != NULL && temp_2 != NULL)
 	{
@@ -32,8 +34,7 @@ void insertion_sort_list(listint_t **list)
 					if (temp->prev == NULL)
 						temp_3 = temp_2->next, temp_2->prev = NULL, temp_2->next = temp,
 						temp->next = temp_3, temp->prev = temp_2, temp_3->prev = temp,
-						temp_2 = temp, temp = temp_2->prev,
-						*list = temp, print_list(*list);
+						temp_2 = temp, temp = temp_2->prev, *list = temp, print_list(*list);
 					else
 						temp_4 = temp_2->next, temp_3 = temp->prev, temp_3->next = temp_2,
 						temp_2->prev = temp_3, temp_2->next = temp, temp->prev = temp_2,
