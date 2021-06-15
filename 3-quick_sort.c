@@ -26,7 +26,7 @@ int division_array(int *array, int low_array, int high_array, size_t size)
 	}
 	temp = array[i + 1], array[i + 1] = array[high_array],
 	array[high_array] = temp;
-	if (i + 1 != high_array)
+	if (i + 1 != j)
 		print_array(array, size);
 	return (i + 1);
 }
