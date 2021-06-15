@@ -16,7 +16,7 @@ int division_array(int *array, int low_array, int high_array, size_t size)
 	for (j = low_array; j <= high_array - 1; j++)
 	{
 		/* condition to compare the pivot with all the elemnts of the divided part */
-		if (array[j] < pivot)
+		if (array[j] <= pivot)
 		{
 			i++;
 			temp = array[i], array[i] = array[j], array[j] = temp;
