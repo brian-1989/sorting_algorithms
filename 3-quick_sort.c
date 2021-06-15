@@ -19,14 +19,15 @@ int division_array(int *array, int low_array, int high_array, size_t size)
 		if (array[j] < pivot)
 		{
 			i++;
+			temp = array[i], array[i] = array[j], array[j] = temp;
 			if (i != j)
-				temp = array[i], array[i] = array[j],
-				array[j] = temp, print_array(array, size);
+				print_array(array, size);
 		}
 	}
+	temp = array[i + 1], array[i + 1] = array[high_array],
+	array[high_array] = temp;
 	if (i + 1 != high_array)
-		temp = array[i + 1], array[i + 1] = array[high_array],
-				array[high_array] = temp, print_array(array, size);
+		print_array(array, size);
 	return (i + 1);
 }
 
